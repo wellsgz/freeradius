@@ -2,7 +2,7 @@ version: '3'
 
 services:
   freeradius:
-    image: goofball222/freeradius
+    image: wellsgz/docker-freeradius
     container_name: freeradius
     network_mode: bridge
     restart: unless-stopped
@@ -11,20 +11,11 @@ services:
       - 1813:1813/udp
     volumes:
       - /etc/localtime:/etc/localtime:ro
-#      - ./clients.conf:/etc/raddb/clients.conf
-#      - ./radiusd.conf:/etc/raddb/radiusd.conf
-#      - ./authorize:/etc/raddb/mods-config/files/authorize
-#      - ./certs:/etc/freeradius/certs
+      - /home/wells/data/freeradius/clients.conf:/etc/raddb/clients.conf
+      - /home/wells/data/freeradius/radiusd.conf:/etc/raddb/radiusd.conf
+      - /home/wells/data/freeradius/authorize:/etc/raddb/mods-config/files/authorize
+      - /home/wells/data/freeradius/sites-enabled:/etc/raddb/sites-enabled
+      - /home/wells/data/freeradius/certs:/etc/raddb/certs
     environment:
-      - TZ=UTC
-#      - RADIUSD_OPTS=-xx # Enable this for FreeRadius extra log verbosity/degub
-
-  freeradius-test:
-    image: goofball222/freeradius
-    container_name: freeradius-test
-    network_mode: bridge
-    depends_on:
-      - freeradius
-    links:
-      - freeradius
-    command: "radtest bob hello freeradius 0 SECRET"
+      - TZ=Asia/Hong_Kong
+      #- RADIUSD_OPTS=-xx # Enable this for FreeRadius extra log verbosity/degub
