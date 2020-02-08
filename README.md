@@ -26,6 +26,11 @@ This container exposes the following two ports:
 
 ---
 
+**Make your certificate and mount with voulme
+[https://wiki.freeradius.org/config/Certificates]
+
+---
+
 **Basic docker-compose.yml to launch a FreeRadius instance and make it accessible*
 
 ```bash
