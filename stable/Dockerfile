@@ -5,7 +5,7 @@ ARG VCS_REF
 ARG VERSION
 
 LABEL \
-    org.label-schema.vendor="Revised from The Goofball - goofball222@gmail.com" \
+    org.label-schema.vendor="Revised from https://github.com/goofball222/freeradius " \
     org.label-schema.url="https://github.com/wellsgz/freeradius" \
     org.label-schema.name="FreeRadius Docker Container" \
     org.label-schema.version=$VERSION \
