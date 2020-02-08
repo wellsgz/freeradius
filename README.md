@@ -38,7 +38,7 @@ version: '3'
 
 services:
   freeradius:
-    image: goofball222/freeradius
+    image: wellsgz/docker-freeradius
     container_name: freeradius
     network_mode: bridge
     restart: unless-stopped
@@ -47,12 +47,13 @@ services:
       - 1813:1813/udp
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./clients.conf:/etc/raddb/clients.conf
-      - ./radiusd.conf:/etc/raddb/radiusd.conf
-      - ./authorize:/etc/raddb/mods-config/files/authorize
-      - ./certs:/etc/freeradius/certs
+      - /home/wells/data/freeradius/clients.conf:/etc/raddb/clients.conf
+      - /home/wells/data/freeradius/radiusd.conf:/etc/raddb/radiusd.conf
+      - /home/wells/data/freeradius/authorize:/etc/raddb/mods-config/files/authorize
+      - /home/wells/data/freeradius/sites-enabled:/etc/raddb/sites-enabled
+      - /home/wells/data/freeradius/certs:/etc/raddb/certs
     environment:
-      - TZ=UTC
+      - TZ=Asia/Hong_Kong
 
 ```
 
@@ -69,4 +70,4 @@ services:
 | `RADIUSD_OPTS` | ***unset*** |  Any additional custom run options for the container radiusd process |
 
 [//]: # (Licensed under the Apache 2.0 license)
-[//]: # (Copyright 2018 The Goofball - goofball222@gmail.com)
+[//]: # (Revised from https://github.com/goofball222/freeradius)
