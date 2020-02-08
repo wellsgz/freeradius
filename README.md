@@ -5,12 +5,8 @@
 ## Docker tags:
 | Tag | freeradius Version | Description | Release Date |
 | --- | :---: | --- | :---: |
-| [latest](https://github.com/goofball222/freeradius/blob/master/stable/Dockerfile) | 3.0.19 | Latest stable release | 2019-06-28 |
+| [latest](https://github.com/wellsgz/freeradius/blob/master/stable/Dockerfile) | 3.0.19 | Latest stable release | 2019-06-28 |
 
----
-
-* [Recent changes, see: GitHub CHANGELOG.md](https://github.com/goofball222/freeradius/blob/master/CHANGELOG.md)
-* [Report any bugs, issues or feature requests on GitHub](https://github.com/goofball222/freeradius/issues)
 
 ---
 
