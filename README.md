@@ -43,11 +43,11 @@ services:
       - 1813:1813/udp
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /home/wells/data/freeradius/clients.conf:/etc/raddb/clients.conf
-      - /home/wells/data/freeradius/radiusd.conf:/etc/raddb/radiusd.conf
-      - /home/wells/data/freeradius/authorize:/etc/raddb/mods-config/files/authorize
-      - /home/wells/data/freeradius/sites-enabled:/etc/raddb/sites-enabled
-      - /home/wells/data/freeradius/certs:/etc/raddb/certs
+      - <your path>/clients.conf:/etc/raddb/clients.conf
+      - <your path>/radiusd.conf:/etc/raddb/radiusd.conf
+      - <your path>/authorize:/etc/raddb/mods-config/files/authorize
+      - <your path>/sites-enabled:/etc/raddb/sites-enabled
+      - <your path>/certs:/etc/raddb/certs
     environment:
       - TZ=Asia/Hong_Kong
 
